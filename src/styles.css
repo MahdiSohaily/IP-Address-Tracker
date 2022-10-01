@@ -83,16 +83,30 @@ select {
 }
 
 .map-container {
-    flex: 1;
-    position: relative;
-    background-color: rebeccapurple;
+  flex: 1;
+  position: relative;
+  background-color: rebeccapurple;
 }
 
 .card {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    max-width: 1110px;
-    margin-inline: auto;
-    background-color: seagreen;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  max-width: 1110px;
+  margin-inline: auto;
+  background-color: seagreen;
+}
+
+.result {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  background-color: white;
+  padding: 40px 30px;
+}
+
+.result-item {
+  flex: 1;
 }
