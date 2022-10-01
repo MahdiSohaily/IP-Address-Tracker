@@ -7,7 +7,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
    },
   plugins: [
     new HtmlWebpackPlugin({
-      title: 'Output Management',
+        template: './src/index.html',
     }),
   ],
    output: {
