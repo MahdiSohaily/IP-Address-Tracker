@@ -6,7 +6,6 @@ module.exports = {
   entry: {
     index: './src/index.js',
   },
-  devtool: 'inline-source-map',
   devServer: {
     static: './dist',
   },
@@ -25,23 +24,12 @@ module.exports = {
         test: /\.html$/,
         use: ['html-loader'],
       },
-      {
-        test: /icon-cross.png$/,
-        use: {
-          loader: 'file-loader',
-          options: {
-            name: '[name].[ext]',
-            outputPath: 'images/',
-          },
-        },
-      },
     ],
   },
   output: {
-    filename: '[name].bundle.js',
+    filename: '[name].js',
     path: path.resolve(__dirname, 'dist'),
     assetModuleFilename: 'images/[name][ext]',
-    clean: true,
   },
   optimization: {
     runtimeChunk: 'single',
