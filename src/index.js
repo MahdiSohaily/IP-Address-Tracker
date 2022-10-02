@@ -31,25 +31,25 @@ const data = async (request) => {
 };
 
 // Call the initialization function to load current user data on load
-// data('')
-//   .then((data) => {
-//     const ip = document.querySelector('.ip');
-//     const location = document.querySelector('.location');
-//     const timeZone = document.querySelector('.timeZone');
-//     const isp = document.querySelector('.isp');
+data('')
+  .then((data) => {
+    const ip = document.querySelector('.ip');
+    const location = document.querySelector('.location');
+    const timeZone = document.querySelector('.timeZone');
+    const isp = document.querySelector('.isp');
 
-//     ip.innerHTML = data.ip;
-//     location.innerHTML =
-//       data.location.city +
-//       ',' +
-//       data.location.country +
-//       ', <br>' +
-//       data.location.geonameId;
-//     timeZone.innerHTML = 'UTC' + data.location.timezone;
-//     isp.innerHTML = data.isp;
-//     displayMap(data.location.lat, data.location.lng);
-//   })
-//   .catch((err) => console.log(err.message));
+    ip.innerHTML = data.ip;
+    location.innerHTML =
+      data.location.city +
+      ',' +
+      data.location.country +
+      ', <br>' +
+      data.location.geonameId;
+    timeZone.innerHTML = 'UTC' + data.location.timezone;
+    isp.innerHTML = data.isp;
+    displayMap(data.location.lat, data.location.lng);
+  })
+  .catch((err) => console.log(err.message));
 
 // add function to display Error
 function displayError(message) {
