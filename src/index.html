@@ -18,8 +18,8 @@
     <main class="full-height">
         <div class="hero-header">
             <section class="card" aria-labelledby="IP-section">
-                <h1 class="primary-header" id="IP-section">IP Address Tracker</h1>
-                <form class="form rounded mb-2" action="javascript:void(0)" method="get">
+                <h1 class="primary-header mb-1" id="IP-section">IP Address Tracker</h1>
+                <form class="form rounded" action="javascript:void(0)" method="get">
                     <div class="input-group">
                         <input class="ipAddress" type="text" name="ip" placeholder="Search for any IP address or domain"
                             aria-label="IP address">
@@ -28,7 +28,7 @@
                         </button>
                     </div>
                 </form>
-                <div class="result rounded">
+                <div class="result rounded mt-2">
                     <div class="result-item">
                         <p class="title">ip address</p>
                         <p class="value ip">192.212.174.101</p>
@@ -50,6 +50,7 @@
         </div>
         <div id="map" class="map-container">
         </div>
+        <p class="error"></p>
     </main>
     <script src="https://unpkg.com/leaflet@1.9.1/dist/leaflet.js"
         integrity="sha256-NDI0K41gVbWqfkkaHj15IzU7PtMoelkzyKp8TOaFQ3s=" crossorigin=""></script>

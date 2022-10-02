@@ -93,8 +93,16 @@ select {
   border-radius: 1rem;
 }
 
+.mb-1 {
+  margin-bottom: 7px;
+}
+
 .mb-2 {
   margin-bottom: 10px;
+}
+
+.mt-2 {
+  margin-top: 35px;
 }
 
 @media screen and (min-width: 40em) {
@@ -125,7 +133,6 @@ select {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 1rem;
   max-width: 1110px;
   width: 100%;
   left: 50%;
@@ -153,9 +160,29 @@ input {
 }
 
 button {
+  cursor: pointer;
   padding-inline: 1.3rem;
   background-color: var(--very-dark-gray);
   border: none;
+}
+
+button:hover {
+  opacity: 0.9;
+}
+
+.error {
+  position: fixed;
+  bottom: -100px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 14px;
+  font-weight: 700;
+  color: rgb(162, 20, 20);
+  background-color: rgba(0, 0, 0, 0.552);
+  padding: 5px 10px;
+  margin-block: 10px;
+  border-radius: 8px;
+  transition: all 0.5s ease-in;
 }
 
 .result {

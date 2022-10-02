@@ -4,12 +4,21 @@ import './styles.css';
 // DOM reference to access data
 const form = document.querySelector('.form');
 const input = document.querySelector('.ipAddress');
+const error = document.querySelector('.error');
 
 // Add event listener to form to submit data on submission
 form.addEventListener('submit', () => {
   const value = input.value;
-  data(value);
+  const regex =
+    /((^\s*((([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])\.){3}([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5]))\s*$)|(^\s*((([0-9A-Fa-f]{1,4}:){7}([0-9A-Fa-f]{1,4}|:))|(([0-9A-Fa-f]{1,4}:){6}(:[0-9A-Fa-f]{1,4}|((25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)(\.(25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)){3})|:))|(([0-9A-Fa-f]{1,4}:){5}(((:[0-9A-Fa-f]{1,4}){1,2})|:((25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)(\.(25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)){3})|:))|(([0-9A-Fa-f]{1,4}:){4}(((:[0-9A-Fa-f]{1,4}){1,3})|((:[0-9A-Fa-f]{1,4})?:((25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)(\.(25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)){3}))|:))|(([0-9A-Fa-f]{1,4}:){3}(((:[0-9A-Fa-f]{1,4}){1,4})|((:[0-9A-Fa-f]{1,4}){0,2}:((25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)(\.(25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)){3}))|:))|(([0-9A-Fa-f]{1,4}:){2}(((:[0-9A-Fa-f]{1,4}){1,5})|((:[0-9A-Fa-f]{1,4}){0,3}:((25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)(\.(25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)){3}))|:))|(([0-9A-Fa-f]{1,4}:){1}(((:[0-9A-Fa-f]{1,4}){1,6})|((:[0-9A-Fa-f]{1,4}){0,4}:((25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)(\.(25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)){3}))|:))|(:(((:[0-9A-Fa-f]{1,4}){1,7})|((:[0-9A-Fa-f]{1,4}){0,5}:((25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)(\.(25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)){3}))|:)))(%.+)?\s*$))/gim;
+  if (regex.test(value)) {
+    // data(value);
+    displayError('Input correct IPv4 or IPv6 address.');
+  } else {
+    displayError('Input correct IPv4 or IPv6 address.');
+  }
 });
+
 
 // add async function to get data from an API
 const data = async (request) => {
@@ -17,38 +26,38 @@ const data = async (request) => {
     `https://geo.ipify.org/api/v2/country,city?apiKey=at_mZXwLKLEkMRCIAtxqlnRt3rO8k2if&ipAddress=${request}`
   );
 
-  if (response.status !== 200) {
-    throw new Error('Input correct IPv4 or IPv6 address.');
-  }
-
   const data = await response.json();
   return data;
 };
 
 // Call the initialization function to load current user data on load
-data('')
-  .then((data) => {
-    const ip = document.querySelector('.ip');
-    const location = document.querySelector('.location');
-    const timeZone = document.querySelector('.timeZone');
-    const isp = document.querySelector('.isp');
+// data('')
+//   .then((data) => {
+//     const ip = document.querySelector('.ip');
+//     const location = document.querySelector('.location');
+//     const timeZone = document.querySelector('.timeZone');
+//     const isp = document.querySelector('.isp');
 
-    ip.innerHTML = data.ip;
-    location.innerHTML =
-      data.location.city +
-      ',' +
-      data.location.country +
-      ', <br>' +
-      data.location.geonameId;
-    timeZone.innerHTML = 'UTC' + data.location.timezone;
-    isp.innerHTML = data.isp;
-    displayMap(data.location.lat, data.location.lng);
-  })
-  .catch((error) => displayError(error));
+//     ip.innerHTML = data.ip;
+//     location.innerHTML =
+//       data.location.city +
+//       ',' +
+//       data.location.country +
+//       ', <br>' +
+//       data.location.geonameId;
+//     timeZone.innerHTML = 'UTC' + data.location.timezone;
+//     isp.innerHTML = data.isp;
+//     displayMap(data.location.lat, data.location.lng);
+//   })
+//   .catch((err) => console.log(err.message));
 
 // add function to display Error
-function displayError(e) {
-  console.log(e);
+function displayError(message) {
+  error.innerHTML = message;
+  error.style.bottom = '10px';
+  setTimeout(() => {
+    error.style.bottom = '-100px';
+  }, 1000);
 }
 
 // function to display map to the UI base on the API data
