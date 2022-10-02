@@ -1,5 +1,4 @@
 import './styles.css';
-import './images/icon-location.svg'
 
 // DOM reference to access data
 const form = document.querySelector('.form');
