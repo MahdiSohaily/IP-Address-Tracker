@@ -82,10 +82,21 @@ select {
   flex-direction: column;
 }
 
+.primary-header {
+  color: white;
+  font-size: 32px;
+  font-family: var(--font-family);
+  font-weight: 500;
+}
+
+.rounded {
+  border-radius: 1rem;
+}
+
+/* component styles */
 .map-container {
   flex: 1;
   position: relative;
-  background-color: rebeccapurple;
 }
 
 .card {
@@ -93,9 +104,38 @@ select {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  position: absolute;
+  top: -230px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
   max-width: 1110px;
-  margin-inline: auto;
-  background-color: seagreen;
+  gap: 2rem;
+}
+
+.form {
+  flex: 1;
+  width: 100%;
+  max-width: 555px;
+  overflow: hidden;
+}
+
+.input-group {
+  display: flex;
+}
+
+input {
+  border: none;
+  outline: none;
+  padding: 0.8rem 25px;
+  width: 100%;
+  background-color: aqua;
+}
+
+button {
+  padding-inline: 1.3rem;
+  background-color: var(--very-dark-gray);
+  border: none;
 }
 
 .result {
@@ -104,9 +144,32 @@ select {
   align-items: center;
   width: 100%;
   background-color: white;
-  padding: 40px 30px;
+  padding: 40px 0;
 }
 
 .result-item {
   flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.result-item {
+  padding-left: 30px;
+}
+
+.result-item:not(:last-child) {
+  border-right: 1px solid var(--dark-gray);
+}
+
+.title {
+  text-transform: uppercase;
+  color: var(--dark-gray);
+}
+
+.value {
+  color: var(--very-dark-gray);
+  font-size: 28px;
+  font-weight: 500;
 }
