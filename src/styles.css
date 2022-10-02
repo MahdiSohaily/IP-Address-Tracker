@@ -95,8 +95,11 @@ select {
 
 /* component styles */
 .hero-header {
-  background-image: url('./images/pattern-bg.png');
-  min-height: 300px;
+  position: relative;
+  background: url('./images/pattern-bg.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 280px;
 }
 
 .map-container {
@@ -105,17 +108,17 @@ select {
 }
 
 .card {
+  position: absolute;
+  padding: 1.5rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  position: absolute;
-  top: 10px;
+  gap: 1rem;
+  max-width: 1110px;
+  width: 100%;
   left: 50%;
   transform: translateX(-50%);
-  width: 100%;
-  max-width: 1110px;
-  gap: 2rem;
 }
 
 .form {
@@ -134,7 +137,6 @@ input {
   outline: none;
   padding: 0.8rem 25px;
   width: 100%;
-  background-color: aqua;
 }
 
 button {
