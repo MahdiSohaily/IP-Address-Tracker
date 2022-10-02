@@ -1,14 +1,17 @@
 import { concat } from 'lodash';
 import './styles.css';
 
+// DOM reference to access data
 const form = document.querySelector('.form');
 const input = document.querySelector('.ipAddress');
 
+// Add event listener to form to submit data on submission
 form.addEventListener('submit', () => {
   const value = input.value;
   data(value);
 });
 
+// add async function to get data from an API
 const data = async (request) => {
   const response = await fetch(
     `https://geo.ipify.org/api/v2/country,city?apiKey=at_mZXwLKLEkMRCIAtxqlnRt3rO8k2if&ipAddress=${request}`
@@ -22,6 +25,7 @@ const data = async (request) => {
   return data;
 };
 
+// Call the initialization function to load current user data on load
 data('')
   .then((data) => {
     const ip = document.querySelector('.ip');
@@ -42,10 +46,13 @@ data('')
   })
   .catch((error) => displayError(error));
 
+
+  // add function to display Error 
 function displayError(e) {
   console.log(e);
 }
 
+// function to display map to the UI base on the API data
 function displayMap(lat, lng) {
   var map = L.map('map').setView([lat, lng], 14);
   const tileUrl =
@@ -64,5 +71,6 @@ function displayMap(lat, lng) {
     iconSize: [47, 60],
     iconAnchor: [15, 15],
   });
+  
   const marker = L.marker([lat, lng], { icon: locationIcon }).addTo(map);
 }
