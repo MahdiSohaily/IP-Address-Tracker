@@ -164,6 +164,20 @@ button {
   padding-bottom: 20px;
 }
 
+.title {
+  text-transform: uppercase;
+  color: var(--dark-gray);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.value {
+  color: var(--very-dark-gray);
+  font-size: 22px;
+  font-weight: 500;
+}
+
 @media screen and (min-width: 40em) {
   .result {
     display: flex;
@@ -182,15 +196,10 @@ button {
   .result-item:not(:last-child) {
     border-right: 1px solid var(--dark-gray);
   }
-}
 
-.title {
-  text-transform: uppercase;
-  color: var(--dark-gray);
-}
-
-.value {
-  color: var(--very-dark-gray);
-  font-size: 28px;
-  font-weight: 500;
+  .value {
+    color: var(--very-dark-gray);
+    font-size: 28px;
+    font-weight: 500;
+  }
 }
