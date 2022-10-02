@@ -178,11 +178,12 @@ button:hover {
   font-size: 14px;
   font-weight: 700;
   color: rgb(162, 20, 20);
-  background-color: rgba(0, 0, 0, 0.552);
+  background-color: rgba(0, 0, 0, 0.799);
   padding: 5px 10px;
   margin-block: 10px;
   border-radius: 8px;
   transition: all 0.5s ease-in;
+  z-index: 1000;
 }
 
 .result {
