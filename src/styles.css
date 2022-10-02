@@ -94,6 +94,11 @@ select {
 }
 
 /* component styles */
+.hero-header {
+  background-image: url('./images/pattern-bg.png');
+  min-height: 300px;
+}
+
 .map-container {
   flex: 1;
   position: relative;
@@ -105,7 +110,7 @@ select {
   justify-content: center;
   align-items: center;
   position: absolute;
-  top: -230px;
+  top: 10px;
   left: 50%;
   transform: translateX(-50%);
   width: 100%;
