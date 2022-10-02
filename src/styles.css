@@ -147,6 +147,7 @@ button {
 
 .result {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   width: 100%;
@@ -159,15 +160,28 @@ button {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: flex-start;
+  align-items: center;
+  padding-bottom: 20px;
 }
 
-.result-item {
-  padding-left: 30px;
-}
+@media screen and (min-width: 40em) {
+  .result {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  }
 
-.result-item:not(:last-child) {
-  border-right: 1px solid var(--dark-gray);
+  .result-item {
+    justify-content: center;
+    align-items: flex-start;
+    padding-left: 30px;
+  }
+
+  .result-item:not(:last-child) {
+    border-right: 1px solid var(--dark-gray);
+  }
 }
 
 .title {
