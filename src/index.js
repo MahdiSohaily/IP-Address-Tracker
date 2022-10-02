@@ -1,6 +1,14 @@
 import { concat } from 'lodash';
 import './styles.css';
 
+const form = document.querySelector('.form');
+const input = document.querySelector('.ipAddress');
+
+form.addEventListener('submit', () => {
+  const value = input.value;
+  data(value);
+});
+
 const data = async (request) => {
   const response = await fetch(
     `https://geo.ipify.org/api/v2/country,city?apiKey=at_mZXwLKLEkMRCIAtxqlnRt3rO8k2if&ipAddress=${request}`
@@ -11,7 +19,6 @@ const data = async (request) => {
   }
 
   const data = await response.json();
-  console.log(data);
   return data;
 };
 
