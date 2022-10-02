@@ -5,7 +5,8 @@
   "private": true,
   "scripts": {
     "build": "webpack --config webpack.config.js",
-    "start": "webpack serve --open"
+    "start": "webpack serve --open",
+    "deploy": "gh-pages -d dist"
   },
   "repository": {
     "type": "git",
@@ -14,6 +15,7 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
+  "homepage": "https://mahdisohaily.github.io/IP-Address-Tracker/",
   "bugs": {
     "url": "https://github.com/MahdiSohaily/IP-Address-Tracker/issues"
   },
