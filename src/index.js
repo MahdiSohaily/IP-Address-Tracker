@@ -46,8 +46,7 @@ data('')
   })
   .catch((error) => displayError(error));
 
-
-  // add function to display Error 
+// add function to display Error
 function displayError(e) {
   console.log(e);
 }
@@ -71,6 +70,6 @@ function displayMap(lat, lng) {
     iconSize: [47, 60],
     iconAnchor: [15, 15],
   });
-  
+
   const marker = L.marker([lat, lng], { icon: locationIcon }).addTo(map);
 }
