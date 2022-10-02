@@ -105,21 +105,21 @@ select {
 
 /* component styles */
 .hero-header {
-  position: relative;
   background: url('./images/pattern-bg.png');
   background-repeat: no-repeat;
   background-size: cover;
   background-position: top;
-  min-height: 320px;
+  height: 320px;
 }
 
 @media screen and (min-width: 40em) {
   .hero-header {
-    min-height: 280px;
+    height: 280px;
   }
 }
+
 .card {
-  position: absolute;
+  position: relative;
   padding: 1.5rem;
   display: flex;
   flex-direction: column;
@@ -131,6 +131,7 @@ select {
   left: 50%;
   transform: translateX(-50%);
   padding-top: 2.5rem;
+  z-index: 1000;
 }
 
 .form {
@@ -188,6 +189,7 @@ button {
   color: var(--very-dark-gray);
   font-size: 22px;
   font-weight: 500;
+  line-height: 1.3;
 }
 
 @media screen and (min-width: 40em) {
@@ -218,5 +220,4 @@ button {
 
 .map-container {
   flex: 1;
-  z-index: -1;
 }
