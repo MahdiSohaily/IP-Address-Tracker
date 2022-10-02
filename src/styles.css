@@ -75,7 +75,7 @@ select {
 
 /* Utility classes */
 .full-height {
-  min-height: 100vh;
+  height: 100vh;
   display: flex;
   align-items: stretch;
   justify-content: stretch;
@@ -101,12 +101,6 @@ select {
   background-size: cover;
   min-height: 280px;
 }
-
-.map-container {
-  flex: 1;
-  position: relative;
-}
-
 .card {
   position: absolute;
   padding: 1.5rem;
@@ -202,4 +196,10 @@ button {
     font-size: 28px;
     font-weight: 500;
   }
+}
+
+.map-container {
+  flex: 1;
+  background-color: rebeccapurple;
+  z-index: -1;
 }
