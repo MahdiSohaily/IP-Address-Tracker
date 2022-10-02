@@ -93,13 +93,30 @@ select {
   border-radius: 1rem;
 }
 
+.mb-2 {
+  margin-bottom: 10px;
+}
+
+@media screen and (min-width: 40em) {
+  .mb-2 {
+    margin-bottom: 32px;
+  }
+}
+
 /* component styles */
 .hero-header {
   position: relative;
   background: url('./images/pattern-bg.png');
   background-repeat: no-repeat;
   background-size: cover;
-  min-height: 280px;
+  background-position: top;
+  min-height: 320px;
+}
+
+@media screen and (min-width: 40em) {
+  .hero-header {
+    min-height: 280px;
+  }
 }
 .card {
   position: absolute;
@@ -113,6 +130,7 @@ select {
   width: 100%;
   left: 50%;
   transform: translateX(-50%);
+  padding-top: 2.5rem;
 }
 
 .form {
